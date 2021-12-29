@@ -1,0 +1,44 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>SignUp</mat-card-title>
+        <h4>Register yourself by filling below details</h4>
+      </mat-card-header>
+  
+      <form  [formGroup]="ResigterForm" (ngSubmit)="onSignup()">
+  
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Full Name" formControlName="FullName">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="User Name" formControlName="UserName">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" >
+            <input matInput placeholder="Password" formControlName="Password">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Mobile Number" formControlName="Mobile">
+          </mat-form-field>
+         
+  
+        
+  
+          <mat-form-field class="example-full-width">
+            <mat-label>Usert Type</mat-label>
+            <mat-select formControlName="UserType">
+              <mat-option [value]="roles" *ngFor="let roles of Roles">{{roles}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+        </mat-card-content>
+  
+        <button type="submit" mat-stroked-button color="accent" class="btn-block">Register</button>
+  
+      </form> 
+    </mat-card>
+  </div>
+
+      
+
