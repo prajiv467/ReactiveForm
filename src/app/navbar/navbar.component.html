@@ -2,16 +2,32 @@
     <mat-toolbar color="primary" class="mat-elevation-z8">
       <span><mat-icon>eco</mat-icon></span>
       <div class="space"></div>
-      <a mat-button routerLink=""  >Home</a> &nbsp;&nbsp;
+      <a mat-button  routerLink="Dashboard"  >Home</a> &nbsp;&nbsp;
       <a mat-button routerLink="about">About</a>&nbsp;&nbsp;
       <a mat-button routerLink="login">login</a>&nbsp;&nbsp;
-      <a mat-raised-button color="accent" routerLink="user">Signout</a>&nbsp;&nbsp;
+      <a mat-button routerLink="register">register</a>&nbsp;&nbsp;
+      <a mat-button routerLink="signup">signup</a>&nbsp;&nbsp;
+      <a mat-raised-button color="accent" routerLink="">Signout</a>&nbsp;&nbsp;
     
     </mat-toolbar>
    
     
 
   </p>
+  <div class="dropdown" mdbDropdown>
+
+    <button mdbDropdownToggle mdbBtn color="primary" class="dropdown-toggle waves-light" type="button"
+      mdbWavesEffect>
+      Dropdown primary
+    </button>
+  
+    <div class="dropdown-menu dropdown-primary">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+    </div>
+  </div>
 <!--   IInd Nav bar
   <p>
     <mat-toolbar>
