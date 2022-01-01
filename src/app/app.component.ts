@@ -11,17 +11,41 @@ export class AppComponent {
   title = 'ReactiveForm';
 
   usersValueDisplay:any;
-
-  data: number = 10;
-  
   constructor(private userdata:UserdataService) {
 
     this.usersValueDisplay=userdata.userServiceFunction()
     
   }
+  data = "Hekkkkkkk";
+  
+  parentdata: number = 10;
+ 
+
+
+  //Function for updating child data
   updateChild(){
 //console.warn(this.data);
-    this.data=Math.floor(Math.random()*1000);
+   // this.data=Math.floor(Math.random()*1000);
   }
+///End of code for Function for updating child data
 
+//Function for updating child data via Form
+
+  ChangeValue(data:any)
+  {
+    this.data=data.name;
+  }
+//End of code for Function for updating child data via Form
+
+
+
+
+
+  // Function for passing child data to parent
+    GetData(item:string)
+  {
+    console.warn(item);
+  //  this.name=parentdata;
+  }
+ // End of code Function for passing child data to parent
 }

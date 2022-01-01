@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -8,10 +8,22 @@ import { Component, OnInit,Input } from '@angular/core';
 export class ChildComponent implements OnInit {
 
   constructor() { }
-  // Jit Input this code to update value
-  @Input() item=0;
+  // Jit Input this code to update child value
+  @Input() item='';
+// Jit Input this code to update child value
 
+
+
+
+  //Child to parent
+  childData:number=20;
+ @Output() DataEvent:EventEmitter<any>= new EventEmitter()
+  
   ngOnInit(): void {
+      
+  
   }
+
+
 
 }

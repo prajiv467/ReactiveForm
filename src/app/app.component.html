@@ -27,13 +27,34 @@
              </ul>   
              <!-- End of Service Calling  -->
 
+
+
+
              <!-- Passing value Parent to Child  -->
-             <app-child [item]="data" ></app-child>
-             <button (click)="updateChild()" class="btn btn-primary" >Update Child Component From Parent</button>
-             <!-- End of Code for Passing value Parent to Child  -->
+             <!-- <app-child [item]="data" ></app-child>
+             <button (click)="updateChild()" class="btn btn-primary" >Send data to Child Component </button> -->
+              <!-- End of code Passing value Parent to Child  -->
+
+               <!-- Passing value Parent to Child  via form-->
+               <app-child [item]="data" ></app-child>
+             <form #form1="ngForm" (ngSubmit)="ChangeValue(form1.value)">
+
+                <input type="text"  name="name" placeholder="Enter via form" ngModel> &nbsp;&nbsp;&nbsp;&nbsp;
+            
+             <button class="btn btn-success" >Send data to Child Component via From </button>
+            </form>
+             <!-- End of Code for Passing value Parent to Child via form -->
+
+             <br>
+
+              <!-- Passing value child to Parent  -->
+              <!-- <app-child (DataEvent)="GetData($event)" ></app-child>
+              <button  class="btn btn-primary" >Send data to Child Component </button> -->
+              <!-- End of Code for Passing value Parent to Child  -->
 
 
-             
+
+
         </div>
     </div>
     <app-footer></app-footer>
