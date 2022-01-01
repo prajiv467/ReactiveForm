@@ -9,8 +9,9 @@
 <div class="col-lg-12" style="border:1px outset lightgrey;width:100%;box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);  transition: 0.5s;  border-radius: 8px;">
 </div>
 <app-navbar></app-navbar>
-
 <router-outlet></router-outlet>
+
+
 </div>
 
 <div >
@@ -19,11 +20,25 @@
             <!-- <app-login></app-login> -->
             <!-- <app-register></app-register> -->
              <!-- <app-register-template></app-register-template> -->
-    
+             <!-- Service Calling  -->
+             <ul>
+                 <li *ngFor="let item of usersValueDisplay" >
+                  {{item.name}} </li>
+             </ul>   
+             <!-- End of Service Calling  -->
+
+             <!-- Passing value Parent to Child  -->
+             <app-child [item]="data" ></app-child>
+             <button (click)="updateChild()" class="btn btn-primary" >Update Child Component From Parent</button>
+             <!-- End of Code for Passing value Parent to Child  -->
+
+
+             
         </div>
     </div>
-    
+    <app-footer></app-footer>
 </div> 
+
 </form>
 
 <!-- </div> -->

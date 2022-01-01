@@ -51,8 +51,25 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { RegisterComponent } from './register/register.component';
 import { RegisterTemplateComponent } from './register-template/register-template.component';
 
-
 import {MatNativeDateModule} from '@angular/material/core';
+
+
+import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
+import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
+import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
+import { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';
+import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
+import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
+import { MdbPopoverModule } from 'mdb-angular-ui-kit/popover';
+import { MdbRadioModule } from 'mdb-angular-ui-kit/radio';
+import { MdbRangeModule } from 'mdb-angular-ui-kit/range';
+import { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';
+import { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';
+import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
+import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
+import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
+import { ChildComponent } from './child/child.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +80,11 @@ import {MatNativeDateModule} from '@angular/material/core';
     DashboardComponent,
     LoginComponent,
     RegisterComponent,
-    RegisterTemplateComponent
+    RegisterTemplateComponent,
+    ChildComponent,
+    FooterComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
@@ -116,7 +137,22 @@ import {MatNativeDateModule} from '@angular/material/core';
   MatIconModule,
      MatRadioModule,
   MatGridListModule,
-
+  
+  MdbDropdownModule,
+    MdbCarouselModule,
+    MdbCheckboxModule,
+    MdbCollapseModule,
+    MdbDropdownModule,
+    MdbFormsModule,
+    MdbModalModule,
+    MdbPopoverModule,
+    MdbRadioModule,
+    MdbRangeModule,
+    MdbRippleModule,
+    MdbScrollspyModule,
+    MdbTabsModule,
+    MdbTooltipModule,
+    MdbValidationModule,
   ],
   providers: [{provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}}],
   bootstrap: [AppComponent],
