@@ -35,15 +35,27 @@
              <button (click)="updateChild()" class="btn btn-primary" >Send data to Child Component </button> -->
               <!-- End of code Passing value Parent to Child  -->
 
-               <!-- Passing value Parent to Child  via form-->
-               <app-child [item]="data" ></app-child>
+              
+              
+              
+              
+              
+              <!-- Passing value Parent to Child  via form-->
+            
+               <!-- <app-child [item]="data" ></app-child>
              <form #form1="ngForm" (ngSubmit)="ChangeValue(form1.value)">
 
                 <input type="text"  name="name" placeholder="Enter via form" ngModel> &nbsp;&nbsp;&nbsp;&nbsp;
             
              <button class="btn btn-success" >Send data to Child Component via From </button>
-            </form>
+            </form> -->
+
              <!-- End of Code for Passing value Parent to Child via form -->
+
+
+
+
+
 
              <br>
 
@@ -51,6 +63,26 @@
               <!-- <app-child (DataEvent)="GetData($event)" ></app-child>
               <button  class="btn btn-primary" >Send data to Child Component </button> -->
               <!-- End of Code for Passing value Parent to Child  -->
+
+
+
+
+
+                   <!-- API Calling -->
+                    <table style="border: 1px outset #808080;">
+                        <tr *ngFor="let item of showApiData"  >
+                          <td class="border border-secondary"> {{ item.id }} </td>
+                          <td class="border border-primary" > {{ item.title }} </td>
+                          <td class="border border-secondary"> {{ item.price }} </td>
+                          <td class="border border-success"> {{ item.description }} </td>
+                          <td class="border border-dark"> {{ item.category }} </td>
+                          <td class="border border-dark"> {{ item.image }} </td>
+                        </tr>
+                    </table>
+                   <!-- End of API Calling -->
+
+
+
 
 
 
