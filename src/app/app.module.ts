@@ -70,6 +70,7 @@ import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { ChildComponent } from './child/child.component';
 import { FooterComponent } from './footer/footer.component';
+import { AgGridModule } from 'ag-grid-angular';
 
 @NgModule({
   declarations: [
@@ -153,6 +154,7 @@ import { FooterComponent } from './footer/footer.component';
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
+    AgGridModule.withComponents([])
   ],
   providers: [{provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}}],
   bootstrap: [AppComponent],

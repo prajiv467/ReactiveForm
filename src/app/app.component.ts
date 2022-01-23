@@ -1,29 +1,58 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ApiService } from './services/api.service';
 import { UserdataService } from './services/userdata.service';
-
+import { ColDef } from 'ag-grid-community';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent  {
   title = 'ReactiveForm';
   usersValueDisplay:any;
   showApiData:any;
+  public gridApi:any;
+  public gridColumnApi:any;
+  public columnDefs:any;
+  public animateRows!: boolean;
+  public sortingOrder:any;
+   enableSorting!: true;
+  rowData!: Observable<any[]>;
 
-
-    constructor(private userdata:UserdataService , private userDataApi:ApiService) {
+    constructor(private userdata:UserdataService , private userDataApi:ApiService, private http:HttpClient) {
 
     this.usersValueDisplay=userdata.userServiceFunction()
     //API Call
     userDataApi.student().subscribe((data)=>{
       console.warn("data",data)
       this.showApiData=data;
+
+      this.columnDefs=[
+          {headerName:"make",field:"make",width:250,sortingOrder:["asc","desc"]},
+          {headerName:"model",field:"model",width:250,sortingOrder:["asc","desc"]},
+          {headerName:"price",field:"price",width:250,sortingOrder:["asc","desc"]}
+        ]
+
     })
     
   }
+    
+  OnGridReady(param:any){
+    this.gridApi=param.gridApi;
+    this.gridColumnApi=param.gridColumnApi;
+
+    this.http.get<any[]>('https://www.ag-grid.com/example-assets/row-data.json')
+    .subscribe(data=>{
+      param.api.setRowData(data)
+    }
+      )
+    
+}
+
+
   data = "Data pass to child";
   
    //Function for updating child data
@@ -52,6 +81,8 @@ export class AppComponent {
 
 
 
+// Function for passing Data to grid
+  
 
-
+// End of Code for Function for passing Data to grid
 }
