@@ -4,6 +4,8 @@ import { ApiService } from './services/api.service';
 import { UserdataService } from './services/userdata.service';
 import { ColDef } from 'ag-grid-community';
 import { Observable } from 'rxjs';
+import {saveAs } from 'file-saver';
+import 'ag-grid-enterprise';
 
 @Component({
   selector: 'app-root',
@@ -21,21 +23,28 @@ export class AppComponent  {
   public sortingOrder:any;
    enableSorting!: true;
   rowData!: Observable<any[]>;
+  
+  private popupParent: any;
+  
+  
+factures = [];
+columns  = ["Id","Reference","Quantite","Prix Unitaire"];
+btnText:  String = "Export CSV";
 
     constructor(private userdata:UserdataService , private userDataApi:ApiService, private http:HttpClient) {
-
+      var document: Document
     this.usersValueDisplay=userdata.userServiceFunction()
     //API Call
     userDataApi.student().subscribe((data)=>{
       console.warn("data",data)
       this.showApiData=data;
-
+     
       this.columnDefs=[
           {headerName:"make",field:"make",width:250,sortingOrder:["asc","desc"]},
           {headerName:"model",field:"model",width:250,sortingOrder:["asc","desc"]},
-          {headerName:"price",field:"price",width:250,sortingOrder:["asc","desc"]}
+          {headerName:"price",field:"price",width:250,sortingOrder:["asc","desc"],editable: true,aggFunc: 'sum'}
         ]
-
+        
     })
     
   }
@@ -43,6 +52,7 @@ export class AppComponent  {
   OnGridReady(param:any){
     this.gridApi=param.gridApi;
     this.gridColumnApi=param.gridColumnApi;
+ 
 
     this.http.get<any[]>('https://www.ag-grid.com/example-assets/row-data.json')
     .subscribe(data=>{
@@ -51,6 +61,17 @@ export class AppComponent  {
       )
     
 }
+
+defaultColDef = {
+  sortable: true,
+  filter: true,
+  
+};
+
+onBtnExport() {
+  this.gridApi.exportDataAsCsv();
+}
+
 
 
   data = "Data pass to child";
