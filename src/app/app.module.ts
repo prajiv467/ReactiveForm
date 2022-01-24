@@ -3,17 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';  
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
 
 import { AboutComponent } from './about/about.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { LoginComponent } from './login/login.component'; 
-
+import { LoginComponent } from './login/login.component';
 
 import { CommonModule } from '@angular/common';
 import { OverlayModule } from '@angular/cdk/overlay';
@@ -51,8 +50,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { RegisterComponent } from './register/register.component';
 import { RegisterTemplateComponent } from './register-template/register-template.component';
 
-import {MatNativeDateModule} from '@angular/material/core';
-
+import { MatNativeDateModule } from '@angular/material/core';
 
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
 import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
@@ -72,6 +70,7 @@ import { ChildComponent } from './child/child.component';
 import { FooterComponent } from './footer/footer.component';
 import { AgGridModule } from 'ag-grid-angular';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,8 +83,6 @@ import { AgGridModule } from 'ag-grid-angular';
     RegisterTemplateComponent,
     ChildComponent,
     FooterComponent,
-    
-    
   ],
   imports: [
     BrowserModule,
@@ -99,47 +96,46 @@ import { AgGridModule } from 'ag-grid-angular';
     MatButtonModule,
     AppRoutingModule,
     CdkTreeModule,
-  MatAutocompleteModule,
-  MatButtonModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatChipsModule,
-  MatDividerModule,
-  MatExpansionModule,
-  MatIconModule,
-  MatInputModule,
-  MatListModule,
-  MatMenuModule,
-  MatProgressSpinnerModule,
-  MatPaginatorModule,
-  MatRippleModule,
-  MatSelectModule,
-  MatSidenavModule,
-  MatSnackBarModule,
-  MatSortModule,
-  MatTableModule,
-  MatTabsModule,
-  MatToolbarModule,
-  MatFormFieldModule,
-  MatButtonToggleModule,
-  MatTreeModule,
-  OverlayModule,
-  PortalModule,
-  MatBadgeModule,
-  MatGridListModule,
-  MatRadioModule,
-  MatDatepickerModule,
-  MatTooltipModule,
-  CommonModule,
-  MatFormFieldModule,
-   MatInputModule,
-  MatSelectModule,
-  MatNativeDateModule,
-  MatIconModule,
-     MatRadioModule,
-  MatGridListModule,
-  
-  MdbDropdownModule,
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatProgressSpinnerModule,
+    MatPaginatorModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatButtonToggleModule,
+    MatTreeModule,
+    OverlayModule,
+    PortalModule,
+    MatBadgeModule,
+    MatGridListModule,
+    MatRadioModule,
+    MatDatepickerModule,
+    MatTooltipModule,
+    CommonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatNativeDateModule,
+    MatIconModule,
+    MatRadioModule,
+    MatGridListModule,
+    MdbDropdownModule,
     MdbCarouselModule,
     MdbCheckboxModule,
     MdbCollapseModule,
@@ -154,11 +150,12 @@ import { AgGridModule } from 'ag-grid-angular';
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
+    
     AgGridModule.withComponents([])
   ],
-  providers: [{provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}}],
+  providers: [{ provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } }],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  
 })
-export class AppModule { }
+export class AppModule {
+}

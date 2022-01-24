@@ -5,8 +5,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiService {
 
-  url="https://fakestoreapi.com/products"
-
+  //url="https://fakestoreapi.com/products"
+  url="https://www.ag-grid.com/example-assets/row-data.json"
   constructor(private http:HttpClient) {} 
 
     student(){

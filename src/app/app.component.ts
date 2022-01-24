@@ -6,12 +6,14 @@ import { ColDef } from 'ag-grid-community';
 import { Observable } from 'rxjs';
 import {saveAs } from 'file-saver';
 import 'ag-grid-enterprise';
+import {ngxCsv} from 'ngx-csv/ngx-csv'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent  {
   title = 'ReactiveForm';
   usersValueDisplay:any;
@@ -24,15 +26,13 @@ export class AppComponent  {
    enableSorting!: true;
   rowData!: Observable<any[]>;
   
-  private popupParent: any;
+
   
   
-factures = [];
-columns  = ["Id","Reference","Quantite","Prix Unitaire"];
-btnText:  String = "Export CSV";
+
 
     constructor(private userdata:UserdataService , private userDataApi:ApiService, private http:HttpClient) {
-      var document: Document
+     
     this.usersValueDisplay=userdata.userServiceFunction()
     //API Call
     userDataApi.student().subscribe((data)=>{
@@ -42,24 +42,27 @@ btnText:  String = "Export CSV";
       this.columnDefs=[
           {headerName:"make",field:"make",width:250,sortingOrder:["asc","desc"]},
           {headerName:"model",field:"model",width:250,sortingOrder:["asc","desc"]},
-          {headerName:"price",field:"price",width:250,sortingOrder:["asc","desc"],editable: true,aggFunc: 'sum'}
+          {headerName:"price",field:"price",width:250,sortingOrder:["asc","desc"],editable: true}
         ]
         
     })
     
   }
+
+ 
     
   OnGridReady(param:any){
     this.gridApi=param.gridApi;
     this.gridColumnApi=param.gridColumnApi;
  
 
-    this.http.get<any[]>('https://www.ag-grid.com/example-assets/row-data.json')
+    var data1=this.http.get<any[]>('https://www.ag-grid.com/example-assets/row-data.json')
     .subscribe(data=>{
       param.api.setRowData(data)
+      
     }
       )
-    
+      
 }
 
 defaultColDef = {
@@ -69,9 +72,22 @@ defaultColDef = {
 };
 
 onBtnExport() {
-  this.gridApi.exportDataAsCsv();
-}
+ // this.gridApi.exportDataAsCsv();
+ debugger;
+ var options = { 
+  fieldSeparator: ',',
+  quoteStrings: '"',
+  decimalseparator: '.',
+  showLabels: true, 
+  showTitle: true,
+  title: 'Report Data',
+  useBom: true,
+  noDownload: false,
+ // headers: ["First Name", "Last Name", "ID"]
+};
 
+new ngxCsv(this.gridApi, "Report", options);
+}
 
 
   data = "Data pass to child";

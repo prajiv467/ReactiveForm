@@ -22,6 +22,7 @@
     
         <!-- Angular Grid Fill   -->
 
+          
         <ag-grid-angular 
         #myGrid 
         style="width:1500px;height: 750px;"
@@ -31,7 +32,7 @@
          [pagination]="true"
         (gridReady)="OnGridReady($event)"
         [isExporttoCSV]=true
-        [suppressExcelExport]="true"
+       
         
         ></ag-grid-angular>
           <!-- End of code for angular Grid Fill   --> 
@@ -103,12 +104,13 @@
 
                               
 
-
+                
 
         </div>
     </div>
     <!-- <app-footer></app-footer> -->
 </div> 
+
 
 </form>
 
